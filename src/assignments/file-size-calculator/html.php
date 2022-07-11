@@ -15,7 +15,7 @@
 				<td colspan="2">Bytes: 1000000000</td>
 			</tr>
 			<tr>
-				<td>kilobytes (KB): 1000000.00</td>
+				<td>kilobytes (KB): <?php echo $inBytes/1000; ?></td>
 				<td>kibibytes (KiB): 976562.50</td>
 			</tr>
 			<tr>

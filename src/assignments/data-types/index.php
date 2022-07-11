@@ -9,8 +9,25 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php
 
-		
+
+			$bin = true;
+			$iBr = 1;
+			$fBr = 1.5;
+			$rec = "Lorem Ipsum";
+			$nums = array(1,2,3);
+			$x = NULL;
+			$newClass = new stdClass();
+
+			
+			var_dump($bin);
+			var_dump($iBr);
+			var_dump($fBr);
+			var_dump($nums);
+			var_dump($x);
+			var_dump($newClass);
+		?>
 
 	</body>
 </html>
