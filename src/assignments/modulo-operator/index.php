@@ -10,13 +10,13 @@
 	</head>
 	<body>
 		<?php 
-			$fiveDigNum = intval(htmlspecialchars($_GET("num")));
-			$digit1 = (int) ( ( 12345 % 10 ) / 10 );
-			$digit2 = (int) ( ( 12345 % 100 ) / 10 );
-			$digit3 = (int) ( ( 12345 % 1000 ) / 10 );
-			$digit4 = (int) ( ( 12345 % 10000 ) / 10 );
-			$digit5 = (int) ( ( 12345 % 100000 ) / 10 );
-			
+			$fiveDigNum = intval($_GET["num"]);
+			$digit5 = (int)  ( 12345 % 10 );
+			$digit4 = (int) ( ( 12345 % 100 ) / 10 );
+			$digit3 = (int) ( ( 12345 % 1000 ) / 100 );
+			$digit2 = (int) ( ( 12345 % 10000 ) / 1000 );
+			$digit1 = (int) ( ( 12345 % 100000 ) / 10000 );
+			echo $fiveDigNum . " = " . $digit1 . " " . $digit2 . " " . $digit3 . " " . $digit4 . " " . $digit5;
 		?>
 
 	</body>
