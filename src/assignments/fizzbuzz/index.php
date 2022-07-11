@@ -9,7 +9,14 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php
+			$num = 1;
+			for($num; $num <= 100; $num ++){
+				if($num % 3 == 0){echo "Fizz  ";}
+				else if($num % 5 == 0 && $num % 3 != 0){echo "buzz  ";}
+				else {echo $num . " ";}
+			}
+		?>
 		
 
 	</body>
