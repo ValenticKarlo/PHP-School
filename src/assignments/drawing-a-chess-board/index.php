@@ -10,26 +10,33 @@
 	</head>
 	<body>
 		<?php 
-			$options=array('options'=>array('default'=>5, 'min_range'=>2, 'max_range'=>30));
-			$size = filter_input(INPUT_GET,'size', FILTER_VALIDATE_INT,['options'] );
-			$black = "B";
-			$white = "W";
-			for ($i=1; $i<=$size; $i++){
-				if($i % 2 == 0){
-					for($j=1; $j<= $size; $j++){
-						if($j % 2 == 0 ){echo "W ";}
-						else{echo "B ";}
+			$options=array('options'=>array('min_range'=>2, 'max_range'=>20));
+			if(!empty($_GET['size']) == NULL){echo 'You need to enter number.';}
+			if(filter_input(INPUT_GET,'size', FILTER_VALIDATE_INT ) === FALSE){echo 'Chess board size needs to be a number.';}
+			elseif(filter_input(INPUT_GET,'size', FILTER_VALIDATE_INT,$options) === FALSE){echo 'Chess board size needs to between 2 and 20.';}
+			
+			else{
+				$size = filter_input(INPUT_GET,'size', FILTER_VALIDATE_INT);
+				echo '<table class="c-chess-board">';
+				for ($i=1; $i<=$size; $i++){
+					echo '<tr>';
+					if($i % 2 == 0){
+						for($j=1; $j<= $size; $j++){
+							if($j % 2 == 0 ){echo '<td class="c-chess-board__cell c-chess-board__cell--light"></td>';}
+							else{echo '<td class="c-chess-board__cell c-chess-board__cell--dark"></td>';}
+							}
 						}
-					}
-				else{
-					for($j=1; $j<= $size; $j++){
-						if($j % 2 == 0 ){echo "B ";}
-						else{echo "W ";}
+					else{
+						for($j=1; $j<= $size; $j++){
+							if($j % 2 == 0 ){echo '<td class="c-chess-board__cell c-chess-board__cell--dark"></td>';}
+							else{echo '<td class="c-chess-board__cell c-chess-board__cell--light"></td>';}
+							}
 						}
-					}
-					echo "<br /n>";
-				}
+						echo '</tr>';
 
+					}
+				echo '</table>';
+			}
 		?>
 		
 
