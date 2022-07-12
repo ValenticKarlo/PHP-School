@@ -9,7 +9,30 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php 
+			if($_GET != NULL){
+				$size = intval($_GET["size"]);
+			}
+			else{$size = 3;}
+			
+			echo "<pre>";
+			for($i=1; $i<=$size ; $i++){
+				if($i == 1 || $i == $size ){
+					for($j=1;$j<=$size;$j++){
+						echo "#";
+						}
+					}			
+				else{
+					for($j=1; $j <= $size; $j++){
+						if($j == 1 || $j == $size){
+							echo "#";
+						}
+						else {echo "&nbsp";}
+					}
+				};
+				echo "<br /n>";
+			}
+		?>
 		
 
 	</body>

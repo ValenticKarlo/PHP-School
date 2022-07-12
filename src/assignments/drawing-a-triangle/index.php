@@ -9,7 +9,19 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php
+			$size = intval($_GET["size"]);
+			$counter = 0; 
 
+			for($i = 1;$i<=$size;$i++ ){
+				$counter = $i;
+				for($j = 1; $j <= $i ; $j ++ ){
+					echo "* ";
+				}
+				echo "<br />";
+			}
+
+		?>
 		
 
 	</body>

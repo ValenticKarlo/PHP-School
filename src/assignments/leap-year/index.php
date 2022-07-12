@@ -9,7 +9,13 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php
+			$year = intval($_GET["year"]);
+			if ($year % 400 == 0 || ($year % 4 == 0 && $year % 100 != 0 )){
+				echo $year . " is a leap year.";
+			}
+			else {echo $year . " is not leap year. ";}
+		?>
 		
 
 	</body>
