@@ -16,6 +16,8 @@ require __DIR__ . '/functions.php';
 	<body>
 
 		
-
+		<?php
+			echo convert_to_decimal("25%");
+		?>
 	</body>
 </html>

@@ -14,8 +14,12 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
-		
-
+		<?php
+			$count = 1;
+			do{
+				echo cardinal_to_ordinal($count) . '<br /n>';
+				$count ++;
+			}while($count != 1000)
+		?>
 	</body>
 </html>
