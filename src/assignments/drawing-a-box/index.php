@@ -10,11 +10,7 @@
 	</head>
 	<body>
 		<?php 
-			if($_GET != NULL){
-				$size = intval($_GET["size"]);
-			}
-			else{$size = 3;}
-			
+			$size = empty($_GET['size']) ? 3 : intval($_GET['size']);
 			echo "<pre>";
 			for($i=1; $i<=$size ; $i++){
 				if($i == 1 || $i == $size ){
@@ -32,6 +28,7 @@
 				};
 				echo "<br /n>";
 			}
+			echo "</pre>";
 		?>
 		
 

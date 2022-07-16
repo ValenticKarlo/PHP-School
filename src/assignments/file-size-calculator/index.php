@@ -9,10 +9,7 @@
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<?php
-			$inBytes = floatval($_GET["bytes"]);
-
-		?>
+		
 		<table class="table table-striped" style="width: 500px;">
 			<tr>
 				<td colspan="2">Bytes: <?$inBytes = floatval($_GET["bytes"]); echo $inBytes;?> </td>

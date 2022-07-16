@@ -14,7 +14,13 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php
+			echo '-10°C is ' . celsius_to_fahrenheit(-10) . ' °F<br \n>';
+			echo '0°C is ' . celsius_to_fahrenheit(0) . ' °F<br \n>';
+			echo '22.45°C is ' . celsius_to_fahrenheit(22.45) . ' °F<br \n>';
+			echo '100°C is ' . celsius_to_fahrenheit(100) . ' °F<br \n>';
 
+		?>
 		
 
 	</body>
