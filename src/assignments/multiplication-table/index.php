@@ -10,8 +10,9 @@
 	</head>
 	<body>
 		<?php
-		define("CONSTANT", 10, true);
+		define("CONSTANT", 10);
 			echo '<table class="table w-auto mx-auto text-center">';
+				echo '<p class="text-center">' . CONSTANT . 'x' . CONSTANT . 'Multiplication Table</p>';
 			
 				for($i=0;$i<=CONSTANT;$i++){
 					if($i == 0){
@@ -28,7 +29,7 @@
 								echo '<td>'. $rez .'</td>';
 							}
 							echo '<br /n>';
-						}
+						}		
 						echo '</th>'.'</tr>';
 					}
 					else{
