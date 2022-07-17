@@ -15,7 +15,7 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php echo longest_word( '' );?>
 
 	</body>
 </html>
