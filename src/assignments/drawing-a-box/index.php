@@ -10,6 +10,9 @@
 	</head>
 	<body>
 		<?php 
+			// if ( isset( $_GET["size"] ) ) {
+			// 	$size = intval($_GET["size"]);
+			// }
 			if($_GET != NULL){
 				$size = intval($_GET["size"]);
 			}

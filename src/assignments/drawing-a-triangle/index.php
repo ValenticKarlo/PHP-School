@@ -13,6 +13,8 @@
 			$size = intval($_GET["size"]);
 			$counter = 0; 
 
+			// if ... manje od 5 isprintaj validacijsku poruku
+
 			for($i = 1;$i<=$size;$i++ ){
 				$counter = $i;
 				for($j = 1; $j <= $i ; $j ++ ){

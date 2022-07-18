@@ -27,4 +27,10 @@
             return $numstr;
         }
     }
+
+    function get_century ($year){
+        $year = intval($year);
+        $century = 
+        return ceil($century)
+    }
 ?>

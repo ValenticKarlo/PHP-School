@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<?php
-		define("CONSTANT", 10, true);
+		define("CONSTANT", 6, true);
 			echo '<table class="table w-auto mx-auto text-center">';
 			
 				for($i=0;$i<=CONSTANT;$i++){
