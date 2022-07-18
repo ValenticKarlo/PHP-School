@@ -15,7 +15,8 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
+		<?php var_dump(is_valid_phone_number('(555) 555-5555'  ));?>
 		
-
+		
 	</body>
 </html>

@@ -14,7 +14,9 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-		<?php echo is_valid_mail('ivo@agilo.co'); ?>
+		<?php 
+		var_dump(is_valid_email('ivo@agiloco')); 
+		?>
 		
 
 	</body>

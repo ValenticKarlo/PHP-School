@@ -15,7 +15,6 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
-
+		<?php var_dump(is_valid_hex_code('#AbAbAb')); ?>
 	</body>
 </html>
