@@ -4,15 +4,14 @@
         $last_date="";
         
         $ldate = date_create($last_date);
-
         foreach($dates as $date){
             $ldate->modify('+1 day');
             $date_format = date_create($date);
-            if($date_format === $ldate){
-                $streak += 1;
+            if($date_format->format('Y') == $ldate->format('Y')&&
+               $date_format->format('m') == $ldate->format('m')&&
+               $date_format->format('d') == $ldate->format('d')){
+                $streak ++;
             }
-            echo $ldate  . '||' . $date_format;
-            echo '<br \n>';
             $ldate = $date_format;
 
         }
