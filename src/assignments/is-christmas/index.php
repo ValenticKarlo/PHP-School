@@ -15,7 +15,7 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php var_dump( is_christmas('2005-12-25')); ?>
 
 	</body>
 </html>

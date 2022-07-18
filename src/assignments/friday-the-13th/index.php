@@ -15,7 +15,9 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(has_friday_the_13th(2020,4));
+		?>
 
 	</body>
 </html>

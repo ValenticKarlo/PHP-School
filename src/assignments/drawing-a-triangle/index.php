@@ -10,17 +10,21 @@
 	</head>
 	<body>
 		<?php
-			$size = intval($_GET["size"]);
-			$counter = 0; 
+			
+			if(intval($_GET["size"])< 5){
+				echo 'It has to be 5 or more.';
+			}
+			else{
+				$size = intval($_GET["size"]);
+				$counter = 0; 
 
-			// if ... manje od 5 isprintaj validacijsku poruku
-
-			for($i = 1;$i<=$size;$i++ ){
-				$counter = $i;
-				for($j = 1; $j <= $i ; $j ++ ){
-					echo "* ";
+				for($i = 1;$i<=$size;$i++ ){
+					$counter = $i;
+					for($j = 1; $j <= $i ; $j ++ ){
+						echo "* ";
+					}
+					echo "<br />";
 				}
-				echo "<br />";
 			}
 
 		?>

@@ -14,7 +14,10 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php
+			echo get_century(2000);
 
+		?>
 		
 
 	</body>

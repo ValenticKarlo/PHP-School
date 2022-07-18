@@ -15,7 +15,9 @@ require __DIR__ . '/functions.php';
 	</head>
 	<body>
 
-		
+		<?php
+			var_dump(count_vowels('programming'));
+		?>
 
 	</body>
 </html>

@@ -14,7 +14,18 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php
+			echo longest_streak( [] ). '<br \n>'; // return 0
+			echo longest_streak( [ '2005-06-31' ] ) . '<br \n>'; // return 1
+			echo	longest_streak( [
+				'2005-06-31',
+				'2010-10-18',
+				'2010-10-19',
+				'2010-10-20',
+				'2022-01-26',
+			] ); // return 3
+			
+		?>
 		
 
 	</body>

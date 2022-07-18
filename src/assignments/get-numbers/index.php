@@ -14,8 +14,9 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php
+			var_dump(get_numbers([ 1, true, 2.5, 'foo', [], null, new stdClass ]));
 		
-
+		?>
 	</body>
 </html>
