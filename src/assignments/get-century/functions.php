@@ -1,14 +1,10 @@
 <?php
-    function get_century($year){
-         $century = ceil($year/100);
-         require "/var/www/src/assignments/cardinal-to-ordinal-number/functions.php";
-         $century = cardinal_to_ordinal($century);
-         return 'Year ' . $year . ' belong to the ' . $century .' century.';
-    }
 
-    function get_century ($year){
-        $year = intval($year);
-        $century = 
-        return ceil($century)
-    }
-?>
+// require "/var/www/src/assignments/cardinal-to-ordinal-number/functions.php";
+require __DIR__ . "/../cardinal-to-ordinal-number/functions.php";
+
+function get_century($year){
+    $century = ceil($year/100);
+    $century = cardinal_to_ordinal($century);
+    return $century .' century.';
+}

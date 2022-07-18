@@ -14,8 +14,27 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
+		<?php
+		echo	'<table class="table table-striped" style="width: 400px;">
+				<tr>
+					<th>Words</th>
+					<th>Longest Common Ending</th>
+				</tr>
+				<tr>
+					<td>cat, dog</td>
+					<td>'. longest_common_ending('cat','dog') . '</td>
+				</tr>
+				<tr>
+					<td>house, house</td>
+					<td>'. longest_common_ending('house','house') . '</td>
+				</tr>
+				<tr>
+					<td>sitting, standing</td>
+					<td>'. longest_common_ending('sitting','standing') . '</td>
+				</tr>
+			</table>'
 
-		
+		?>
 
 	</body>
 </html>

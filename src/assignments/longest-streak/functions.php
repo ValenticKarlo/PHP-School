@@ -1,20 +1,29 @@
 <?php
     function longest_streak($dates){
-        $streak = 0;
+        $streak = 1;
+        $count = 1;
         $last_date="";
-        
         $ldate = date_create($last_date);
-        foreach($dates as $date){
-            $ldate->modify('+1 day');
-            $date_format = date_create($date);
-            if($date_format->format('Y') == $ldate->format('Y')&&
-               $date_format->format('m') == $ldate->format('m')&&
-               $date_format->format('d') == $ldate->format('d')){
-                $streak ++;
-            }
-            $ldate = $date_format;
+        if(!empty($dates)){
+            foreach($dates as $date){
+                
+                $date_format = date_create($date);
+                $pos_diff = $ldate->diff($date_format)->format("%r%a");
+                if($pos_diff == 1){
+                    $count ++; 
+                    }
+                else{
+                    if($streak<$count){
+                        $streak = $count;
+                    }
+                 $count = 1;   
+                }
+                if ($count>$streak){$streak = $count;}
+                $ldate = $date_format;
 
-        }
+            }
+        }else{$streak = 0;}
+        
         return $streak;
     }
 

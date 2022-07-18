@@ -14,7 +14,7 @@ require __DIR__ . '/functions.php';
 		<link href="/assets/css/main.css" rel="stylesheet">
 	</head>
 	<body>
-
+		<?php echo is_valid_mail('ivo@agilo.co'); ?>
 		
 
 	</body>

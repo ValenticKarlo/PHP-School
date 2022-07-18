@@ -11,8 +11,8 @@
 	<body>
 		<?php
 		define("CONSTANT", 10);
+		echo '<p class="text-center">' . CONSTANT . 'x' . CONSTANT . 'Multiplication Table</p>';
 			echo '<table class="table w-auto mx-auto text-center">';
-				echo '<p class="text-center">' . CONSTANT . 'x' . CONSTANT . 'Multiplication Table</p>';
 			
 				for($i=0;$i<=CONSTANT;$i++){
 					if($i == 0){
@@ -21,14 +21,14 @@
 							for($j=1;$j<=CONSTANT;$j++){
 								echo '<th>'. $j .'</th>';
 							}
-							echo '<br /n>';
+							// echo '<br /n>';
 						}
 						else{
 							for($j=1;$j<=CONSTANT;$j++){
 								$rez = $j*$i;
 								echo '<td>'. $rez .'</td>';
 							}
-							echo '<br /n>';
+							// echo '<br /n>';
 						}		
 						echo '</th>'.'</tr>';
 					}
@@ -39,14 +39,14 @@
 							for($j=1;$j<=CONSTANT;$j++){
 								echo '<th>'. $j .'</th>';
 							}
-							echo '<br /n>';
+							// echo '<br /n>';
 						}
 						else{
 							for($j=1;$j<=CONSTANT;$j++){
 								$rez = $j*$i;
 								echo '<td>'. $rez .'</td>';
 							}
-							echo '<br /n>';
+							// echo '<br /n>';
 						}
 						echo '</th>'.'</tr>';
 
