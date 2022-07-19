@@ -17,7 +17,19 @@ require __DIR__ . '/classes.php';
 </head>
 
 <body>
-
+    <?php
+    $animal = new Animal('Tiger','rawr');
+    $animal->set_color("");
+    echo 'Color: ' . $animal->get_color();
+    echo '<br/>';
+    $animal->set_color('Orange');
+    echo 'Color: ' . $animal->get_color();
+    echo '<br/>';
+    $animal->give_kudos();
+    $animal->give_kudos();
+    $animal->give_kudos();
+    echo 'Kudos:'.$animal->count_kudos() . '<br />';
+    ?>
     
 
 </body>

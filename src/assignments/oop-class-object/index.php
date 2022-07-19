@@ -17,7 +17,13 @@ require __DIR__ . '/classes.php';
 </head>
 
 <body>
-
+    <?php 
+    $animal = new Animal();
+    $animal->set_species('tiger');
+    echo '<pre>';
+    print_r($animal);
+    echo '</pre>';
+    ?>
     
 
 </body>

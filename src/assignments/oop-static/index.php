@@ -17,7 +17,17 @@ require __DIR__ . '/classes.php';
 </head>
 
 <body>
-
+    <?php
+    $animal = new Animal('Tiger','rawr');
+    $animal->set_color("");
+    echo 'Color: ' . $animal->get_color();
+    echo '<br/>';
+    $animal->set_color('Orange');
+    echo 'Color: ' . $animal->get_color();
+    echo '<br/>';
+    echo 'Weight unit: ';
+    Attributes::get_weight_unit();
+    ?>
     
 
 </body>

@@ -17,7 +17,9 @@ require __DIR__ . '/classes.php';
 </head>
 
 <body>
-
+    <?php
+    $animal = new Animal('Tiger','rawr');
+    ?>
     
 
 </body>

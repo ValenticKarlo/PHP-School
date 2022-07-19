@@ -1,5 +1,6 @@
 <?php
 
+namespace Zoo;
 require __DIR__ . '/classes.php';
 
 ?>
@@ -17,7 +18,10 @@ require __DIR__ . '/classes.php';
 </head>
 
 <body>
-
+    <?php
+    
+    Attributes::get_weight_unit();
+    ?>
     
 
 </body>
