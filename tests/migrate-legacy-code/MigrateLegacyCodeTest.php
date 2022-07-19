@@ -1,5 +1,5 @@
 <?php
-/*
+
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
@@ -37,4 +37,3 @@ class MigrateLegacyCodeTest extends TestCase {
 		$this->assertEquals( $expected_products, $product_reporter->get_products() );
 	}
 }
-*/
