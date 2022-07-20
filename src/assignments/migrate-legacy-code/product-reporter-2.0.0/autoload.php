@@ -1,6 +1,6 @@
 <?php
 
-function __autoload( $class ) {
+function autoloade( $class ) {
 
 	// project-specific namespace prefix
 	$prefix = 'ProductReporter\\';
@@ -24,3 +24,5 @@ function __autoload( $class ) {
 
 	require $file;
 }
+
+spl_autoload_register('autoloade');

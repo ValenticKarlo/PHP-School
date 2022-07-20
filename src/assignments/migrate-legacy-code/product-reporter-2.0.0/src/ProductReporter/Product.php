@@ -23,6 +23,6 @@ class Product {
 	}
 
 	public function get_models() {
-		return implode( $this->models, ', ' );
+		return implode(', ' , $this->models );
 	}
 }

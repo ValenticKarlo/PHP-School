@@ -2,8 +2,10 @@
 
 namespace ProductReporter;
 
-define( 'EntryName', 'products.csv', true );
-define( 'CsvSeparator', ';', true );
+use ZipArchive;
+
+define( 'EntryName', 'products.csv');
+define( 'CsvSeparator', ';');
 
 class ProductReporter {
 
@@ -14,28 +16,27 @@ class ProductReporter {
 	private function get_file_contents() {
 
 		$contents = '';
+		
 
 		if ( ! file_exists( $this->filepath ) ) {
 			throw new \Exception( 'File [' . $this->filepath . '] does not exist.' );
 		}
+		$zip = new ZipArchive;
 
-		$fh = zip_open( $this->filepath );
+		$fh = $zip->open( $this->filepath);
 
-		if ( ! is_resource( $fh ) ) {
+		if ( !$fh  ) {
 			throw new \Exception( 'Could not open zip file [' . $this->filepath . '].' );
 		}
-
-		while ( $entry = zip_read( $fh ) ) {
-			if ( zip_entry_name( $entry ) === ENTRYNAME ) {
-				if ( zip_entry_open( $fh, $entry ) ) {
-					$contents = zip_entry_read( $entry, zip_entry_filesize( $entry ) );
-					zip_entry_close( $entry );
-				}
-				break;
+		for($i=0; $i<$zip->numFiles ; $i++) {
+			$__stat_index = $zip->statIndex( $i );
+			if ( $zip->statIndex( $i )['name'] === EntryName ) {
+				$contents = $zip->getFromName(EntryName);
+	
 			}
 		}
 
-		zip_close( $fh );
+		$zip->close(  );
 
 		return $contents;
 	}
@@ -44,27 +45,35 @@ class ProductReporter {
 
 		$products = [];
 
-		$rows = str_getcsv( $contents, "\n" ); // get all rows/lines
+		$rows = str_getcsv( $contents, "\n" );
 
 		foreach ( $rows as $row ) {
 			$arr = str_getcsv( $row, CsvSeparator );
-			$products[] = new Product( $arr{0}, $arr{1}, $arr{2}, $arr{3} );
+			$products[] = new Product( $arr[0], $arr[1], $arr[2], $arr[3] );
 		}
 
-		usort( $products, create_function( '$p1,$p2', 'return $p1->get_price() > $p2->get_price();' ) );
+		usort(
+			$products,
+			function($p1,$p2) {
+				if ($p1->get_price() === $p2->get_price()) {
+					return 1;
+				}
+				return $p1->get_price() > $p2->get_price() ? 1 : -1;
+			}
+		);
 
 		return $products;
 	}
 
 	public function parse() {
-		if ( ! array_key_exists( 'products', $this ) ) {
+		if ( ! property_exists( $this, 'products' ) ) {
 			$contents = $this->get_file_contents();
 			$this->products = $this->build_products( $contents );
 		}
 	}
 
 	public function get_products() {
-		if ( ! array_key_exists( 'products', $this ) ) {
+		if ( !property_exists( $this,'products'  ) ) {
 			return [];
 		} else {
 			return $this->products;

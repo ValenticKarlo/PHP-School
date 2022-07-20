@@ -21,7 +21,7 @@ require __DIR__ . '/autoload.php';
 		try {
 			$product_reporter->parse();
 		} catch ( \Throwable $t ) {
-			//throw $th;
+			throw $t;
 		}
 		?>
 
